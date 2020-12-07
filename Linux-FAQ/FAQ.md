@@ -146,3 +146,22 @@ read-only with the 'ro' mount option.
 ### 主机能ping通虚拟机，虚拟机ping不通主机
 
 [解决办法](https://blog.csdn.net/hskw444273663/article/details/81301470?utm_medium=distribute.pc_relevant.none-task-blog-title-4&spm=1001.2101.3001.4242)
+
+### 给Linux的终端界面目录显示换颜色
+修改根目录下的`.bashrc`文件，将其中的`PS1`修改为自己想要的格式即可
+
+- 修改`.bashrc`文件
+
+    ```sh
+    vim ~/.bashrc
+    
+    PS1="\[\033[01;31m\]\u\[\033[00m\]@\[\033[01;32m\]\h\[\033[00m\][\[\033[01;33m\]\t\[\033[00m\]]:\[\033[01;34m\]\w\[\033[00m\]$ "
+    ```
+
+- 使得修改生效
+
+    ```sh
+    source ~/.bashrc 
+    ```
+
+    
