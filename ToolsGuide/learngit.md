@@ -208,3 +208,37 @@ tag（标签）本质上和commit id骑着同样的作用，只是便于观看�
 		  每个仓库的Git配置文件都放在.git/config文件中
 		  每个仓库的Git配置文件都放在.git/config文件中，配置别名可以直接改这个文件
 		  
+
+# FAQ
+
+### 1 使用 git push 的时候出现 error: failed to push some refs to 'git@github.com:xxxxx'
+
+一般是因为远程库和本地库的文件出现了冲突，比如远程库有的文件，本地库没有，就会出现描述的问题
+
+- 解决方法
+
+    使用 `git pull origin master` 来合并远程库和本地库
+
+### 2 使用 git pull 出现 error: Pulling is not possible because you have unmerged files
+
+```sh
+git pull 
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+```
+
+- 解决方法
+
+    ```sh
+    # 提交本地到工作区
+    # 有冲突，先解决冲突合并代码，然后提交
+    git add .
+    git commit -m "提交本地并获取最新"
+    # 获取master分支最新
+    git pull origin master
+    # 如果有冲突就先解决冲突
+    ```
+
+    
