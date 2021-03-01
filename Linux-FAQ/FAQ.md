@@ -175,8 +175,8 @@ read-only with the 'ro' mount option.
 - 在hosts文件中添加以下信息
   ```sh
   140.82.114.4              github.com
-  199.232.69.194          github.global.ssl.fastly.net
-  185.199.108.153        github.github.io
-  185.199.109.153        github.github.io
-  185.199.110.153        github.github.io
-  185.199.111.153        github.github.io
+  199.232.69.194            github.global.ssl.fastly.net
+  185.199.108.153           github.github.io
+  185.199.109.153           github.github.io
+  185.199.110.153           github.github.io
+  185.199.111.153           github.github.io
