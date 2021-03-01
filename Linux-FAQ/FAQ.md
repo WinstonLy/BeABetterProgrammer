@@ -164,4 +164,19 @@ read-only with the 'ro' mount option.
     source ~/.bashrc 
     ```
 
-    
+### 网络正常的情况下无法访问github
+在下面的网站查询对应的IP地址[查询IP地址](https://www.ipaddress.com/)
+- 查询github网站的IP：输入`github.com`
+- 查询域名的IP：输入`github.global.ssl.fastly.net`
+- 查询静态资源的IP：输入`assets-cdn.github.com`
+- 将上面查询到的IP地址存到host文件中（管理员权限）
+  - windows下在`C:\Windows\System32\drivers\etc`下查找hosts文件
+  - Linux下在`/etc/host/`目录下查找host文件
+- 在hosts文件中添加以下信息
+  ```sh
+  140.82.114.4              github.com
+  199.232.69.194          github.global.ssl.fastly.net
+  185.199.108.153        github.github.io
+  185.199.109.153        github.github.io
+  185.199.110.153        github.github.io
+  185.199.111.153        github.github.io
